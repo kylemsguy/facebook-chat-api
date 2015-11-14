@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   function makeTypingIndicator(typ, threadID, callback) {
@@ -35,7 +35,7 @@ module.exports = function(defaultFuncs, api, ctx) {
           return callback();
         })
         .catch(function(err) {
-          log.error("Error in sendTypingIndicator", err);
+          console.log("Error in sendTypingIndicator", err);
           return callback(err);
         });
     });

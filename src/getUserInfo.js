@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 function formatData(data) {
   var retObj = {};
@@ -48,7 +48,7 @@ module.exports = function(defaultFuncs, api, ctx) {
       return callback(null, formatData(resData.payload.profiles));
     })
     .catch(function(err) {
-      log.error("Error in getUserInfo", err);
+      console.log("Error in getUserInfo", err);
       return callback(err);
     });
   };

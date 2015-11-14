@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function markAsRead(threadID, callback) {
@@ -24,7 +24,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         return callback();
       })
       .catch(function(err) {
-        log.error("Error in markAsRead", err);
+        console.log("Error in markAsRead", err);
         return callback(err);
       });
   };

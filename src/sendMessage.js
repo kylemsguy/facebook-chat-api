@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 var bluebird = require("bluebird");
 
 module.exports = function(defaultFuncs, api, ctx) {
@@ -38,7 +38,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         callback(null, resData);
       })
       .catch(function(err) {
-        log.error("Error in uploadAttachment", err);
+        console.log("Error in uploadAttachment", err);
         return callback(err);
       });
   }
@@ -154,7 +154,7 @@ module.exports = function(defaultFuncs, api, ctx) {
           form['message_batch[0][specific_to_list][' + i + ']'] = "fbid:" + threadID[i];
         }
         form['message_batch[0][specific_to_list][' + (threadID.length) + ']'] = "fbid:" + ctx.userID;
-        log.info("Sending message to multiple users: " + threadID);
+        console.log("Sending message to multiple users: " + threadID);
       } else {
         form['message_batch[0][thread_fbid]'] = threadID;
         // This means that threadID is the id of a user, and the chat
@@ -198,7 +198,7 @@ module.exports = function(defaultFuncs, api, ctx) {
           return callback(null, messageInfo);
         })
         .catch(function(err) {
-          log.error("ERROR in sendMessage --> ", err);
+          console.log("ERROR in sendMessage --> ", err);
           return callback(err);
         });
     }

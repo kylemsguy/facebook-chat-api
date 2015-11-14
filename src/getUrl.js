@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function getUrl(url, callback) {
@@ -30,7 +30,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         callback(null, resData.payload.share_data.share_params);
       })
       .catch(function(err) {
-        log.error("Error in getUrl", err);
+        console.log("Error in getUrl", err);
         return callback(err);
       });
   };

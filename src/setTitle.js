@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function setTitle(newTitle, threadFbid, callback) {
@@ -61,7 +61,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         return callback();
       })
       .catch(function(err) {
-        log.error("Error in setTitle", err);
+        console.log("Error in setTitle", err);
         return callback(err);
       });
   };

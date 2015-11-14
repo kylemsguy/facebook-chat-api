@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 var STATUS = {
   0: 'offline',
@@ -43,7 +43,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         return callback(null, formatData(resData.payload.buddy_list.nowAvailableList, resData.payload.buddy_list.last_active_times, resData.payload.time));
       })
       .catch(function(err) {
-        log.error("Error in getOnlineUsers", err);
+        console.log("Error in getOnlineUsers", err);
         return callback(err);
       });
   };

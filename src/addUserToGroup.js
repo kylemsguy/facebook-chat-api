@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function addUserToGroup(userID, threadID, callback) {
@@ -70,7 +70,7 @@ module.exports = function(defaultFuncs, api, ctx) {
       return callback();
     })
     .catch(function(err) {
-      log.error("ERROR in addUserToGroup --> ", err);
+      console.log("ERROR in addUserToGroup --> ", err);
       return callback(err);
     });
   };

@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 var msgsRecv = 0;
 
@@ -46,7 +46,7 @@ module.exports = function(defaultFuncs, api, ctx) {
     .then(utils.parseAndCheckLogin)
     .then(function(resData) {
       var now = Date.now();
-      log.info("Got answer in ", now - tmpPrev);
+      console.log("Got answer in ", now - tmpPrev);
       tmpPrev = now;
 
       if(resData && resData.t === "lb") {
@@ -219,7 +219,7 @@ module.exports = function(defaultFuncs, api, ctx) {
 
     })
     .catch(function(err) {
-      log.error("ERROR in listen --> ", err);
+      console.log("ERROR in listen --> ", err);
       globalCallback(err);
       currentlyRunning = setTimeout(listen, Math.random() * 200 + 50);
     });

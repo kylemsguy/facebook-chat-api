@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function getThreadHistory(threadID, start, end, timestamp, callback) {
@@ -49,7 +49,7 @@ module.exports = function(defaultFuncs, api, ctx) {
           });
         })
         .catch(function(err) {
-          log.error("Error in getThreadHistory", err);
+          console.log("Error in getThreadHistory", err);
           return callback(err);
         });
     });

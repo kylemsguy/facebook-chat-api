@@ -2,7 +2,7 @@
 
 var cheerio = require("cheerio");
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 // [almost] copy pasted from one of FB's minified file (GenderConst)
 var GENDERS = {
@@ -58,7 +58,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         callback(null, formatData(resData.payload));
       })
       .catch(function(err) {
-        log.error("Error in getFriendsList", err);
+        console.log("Error in getFriendsList", err);
         return callback(err);
       });
   };

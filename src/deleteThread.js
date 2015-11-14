@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function deleteThread(threadOrThreads, callback) {
@@ -32,7 +32,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         return callback();
       })
       .catch(function(err) {
-        log.error("Error in deleteThread", err);
+        console.log("Error in deleteThread", err);
         return callback(err);
       });
   };

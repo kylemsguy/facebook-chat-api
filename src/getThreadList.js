@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function getThreadList(start, end, callback) {
@@ -36,7 +36,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         return callback(null, resData.payload.threads.map(utils.formatThread));
       })
       .catch(function(err) {
-        log.error("Error in getThreadList", err);
+        console.log("Error in getThreadList", err);
         return callback(err);
       });
   };

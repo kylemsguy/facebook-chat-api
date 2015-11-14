@@ -1,7 +1,7 @@
 "use strict";
 
 var utils = require("../utils");
-var log = require("npmlog");
+//var log = require("npmlog");
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function removeUserFromGroup(userID, threadID, callback) {
@@ -38,7 +38,7 @@ module.exports = function(defaultFuncs, api, ctx) {
         return callback();
       })
       .catch(function(err) {
-        log.error("ERROR in removeUserFromGroup --> ", err);
+        console.log("ERROR in removeUserFromGroup --> ", err);
         return callback(err);
       });
   };
